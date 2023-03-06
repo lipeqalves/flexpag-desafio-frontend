@@ -1,0 +1,18 @@
+
+
+<div class="buscar">
+  <label for="text">Valor da venda</label>
+  <span class="input-icon">
+   <span class="icon"><fa-icon  [icon]="faBrzilian"></fa-icon></span>
+    <input class="input "
+      [(ngModel)]="valor"
+      (change)="envia()"
+      type="text"
+      id="dinheiro"
+      mask="separator.2"
+      thousandSeparator="."
+      placeholder="000.000,00"
+      required
+    />
+  </span>
+</div>

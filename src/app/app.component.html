@@ -1,0 +1,32 @@
+<router-outlet></router-outlet>
+<main class="container">
+  <app-title></app-title>
+  <app-form-select
+    (modelo)="Modelo($event)"
+    (marca)="Marca($event)"
+    (valorReferencia)="valorReferencia($event)"
+    (anoModelo)="AnoModelo($event)"
+    (codigoFipe)="CodigoFipe($event)"
+    (mesReferencia)="MesReferencia($event)"
+    (isHabilite)="IsHabilite($event)"
+  ></app-form-select>
+
+  <div class="busca-veiculo">
+    <app-input (valorDoVeiculo)="recebeValorDoVeiculo($event)"></app-input>
+    <app-button (click)="hideComponet()" [isHabilite]="isHabilite"></app-button>
+  </div>
+  <app-card-resultado
+    *ngIf="isAliveCard"
+    [isMediaFipe]="isMediaFipe"
+    [isAcimaFipe]="isAcimaFipe"
+    [isAbaixoFipe]="isAbaixoFipe"
+    [percentual]="percebtualAbs"
+    [valorVeiculo]="valorVeiculo"
+    [valorDeReferencia]="valorDeReferencia"
+    [modelo]="modelo"
+    [marca]="marca"
+    [anoModelo]="anoModelo"
+    [codigoFipe]="codigoFipe"
+    [mesReferencia]="mesReferencia"
+  ></app-card-resultado>
+</main>

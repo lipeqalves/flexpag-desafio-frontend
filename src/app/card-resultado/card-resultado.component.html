@@ -1,0 +1,48 @@
+<table class="tg">
+  <tbody>
+    <tr>
+      <td class="tg-dvpl">Marca:</td>
+      <td class="tg-0pky">{{ marca }}</td>
+      <td class="tg-0pky">Valor do Veiculo:</td>
+      <td class="tg-0pky">{{ valorVeiculo }}</td>
+    </tr>
+
+    <tr>
+      <td class="tg-0pky">Modelo:</td>
+      <td class="tg-0pky">{{ modelo }}</td>
+      <td class="tg-0pky">Valor pela FIPE:</td>
+      <td class="tg-0pky">{{ valorDeReferencia }}</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Ano do Modelo:</td>
+      <td class="tg-0pky">{{ anoModelo }}</td>
+      <td class="tg-0pky" colspan="2" rowspan="3">
+        <span class="calc calc-verde" *ngIf="isAbaixoFipe">
+          <p class="msg">Valor abaixo da tabela FIPE</p>
+          <p class="calc-result">{{ percentual }}%</p>
+        </span>
+        <span class="calc calc-vermelho" *ngIf="isAcimaFipe">
+          <p class="msg">Valor acima da tabela FIPE</p>
+          <p class="calc-result">{{ percentual }}%</p>
+        </span>
+        <span class="calc calc-amarelo" *ngIf="isMediaFipe">
+          <p class="msg">Valor na média da tabela FIPE</p>
+          <p class="calc-result">{{ percentual }}%</p>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Código FIPE:</td>
+      <td class="tg-0pky">{{ codigoFipe }}</td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">Mês referência:</td>
+      <td class="tg-0lax">{{ mesReferencia }}</td>
+    </tr>
+  </tbody>
+</table>
+<footer>
+  <p class="footer verde" *ngIf="isAbaixoFipe">Valor abaixo do Mercado</p>
+  <p class="footer vermelho" *ngIf="isAcimaFipe">Valor acima do Mercado</p>
+  <p class="footer amarelo" *ngIf="isMediaFipe">Valor de Mercado</p>
+</footer>

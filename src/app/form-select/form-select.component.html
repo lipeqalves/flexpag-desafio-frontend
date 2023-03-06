@@ -1,0 +1,63 @@
+<form action="/pagina-processa-dados-do-form" method="post" class="form">
+  <div class="form__select">
+    <label for="tipo">Tipo de veículo</label>
+    <select
+      name="select"
+      [(ngModel)]="tipoVeiculo"
+      (change)="obterMarcaVeiculo()"
+      class="select"
+      id="tipo"
+    >
+      <option value="">--none--</option>
+      <option value="carro">Carro</option>
+      <option value="motos">Moto</option>
+      <option value="caminhao">Caminhão</option>
+    </select>
+  </div>
+  <div class="form__select">
+    <label for="marca">Marca</label>
+    <select
+      name="select"
+      class="select"
+      id="marca"
+      [(ngModel)]="marcaVeiculo"
+      (change)="obterModeloVeiculo()"
+    >
+      <option value="">--none--</option>
+      <option value="{{ marca.codigo }}" *ngFor="let marca of marcas">
+        {{ marca.nome }}
+      </option>
+    </select>
+  </div>
+  <div class="form__select">
+    <label for="modelo">Modelo</label>
+    <select
+      name="select"
+      class="select"
+      id="modelo"
+      [(ngModel)]="modeloVeiculo"
+      (change)="obterAnoVeiculo()"
+    >
+      <option value="">--none--</option>
+      <option value="{{ modelo.codigo }}" *ngFor="let modelo of modelos.flat()">
+        {{ modelo.nome }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form__select">
+    <label for="ano">Ano</label>
+    <select
+      name="select"
+      class="select"
+      id="ano"
+      [(ngModel)]="anoVeiculo"
+      (change)="obterVeiculo()"
+    >
+      <option value="" selected>--none--</option>
+      <option value="{{ ano.codigo }}" *ngFor="let ano of anos">
+        {{ ano.nome }}
+      </option>
+    </select>
+  </div>
+</form>

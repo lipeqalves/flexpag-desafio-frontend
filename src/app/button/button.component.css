@@ -1,0 +1,19 @@
+button{
+  font-weight: bold;
+  height: 38px;
+  width: 100px;
+	border: none;
+	margin-bottom: 10px;
+  border-radius: 0 5px 5px 0;
+  color: #ffffff;
+}
+
+.enable{
+  background: #f497b0;
+  cursor: pointer;
+}
+
+.desable{
+  background: #757575;
+  cursor: wait;
+}

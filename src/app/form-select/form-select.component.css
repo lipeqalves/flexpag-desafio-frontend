@@ -1,0 +1,36 @@
+.form{
+
+display: flex;
+justify-content: center;
+
+}
+.form__select{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__select > label {
+  color: #56d1e7;
+  margin-bottom: 10px;
+}
+.select{
+  color: #56d1e7;
+  background: #ffffff;
+  margin: 0 auto;
+	padding: 3px;
+  width: 120px;
+	border: none;
+  text-align: center;
+	margin-bottom: 10px;
+	border-radius: 3px;
+}
+.select:focus{
+  box-shadow: 0 0 0 0;
+  outline: 0;
+  cursor: pointer;
+}
+option{
+  cursor: pointer;
+}
+
