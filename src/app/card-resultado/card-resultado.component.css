@@ -2,17 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   border-collapse: collapse;
-  border-spacing: 0;
   margin-top: 15px;
   color:#0299c3;
   font-size: 22px;
   font-weight: 500;
   border: solid #fff 2px;
 }
-.row{
-  display: flex;
-  gap: 5px;
-}
+
 .tg td {
   border-style: none;
   border-width: 1px;

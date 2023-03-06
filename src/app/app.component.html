@@ -16,7 +16,7 @@
     <app-button (click)="hideComponet()" [isHabilite]="isHabilite"></app-button>
   </div>
   <app-card-resultado
-    *ngIf="true"
+    *ngIf="isAliveCard"
     [isMediaFipe]="isMediaFipe"
     [isAcimaFipe]="isAcimaFipe"
     [isAbaixoFipe]="isAbaixoFipe"
