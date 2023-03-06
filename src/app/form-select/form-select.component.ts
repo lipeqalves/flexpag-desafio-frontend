@@ -17,9 +17,6 @@ export class FormSelectComponent implements OnInit {
   modelos: ITipoVeiculo[] = [];
   anos: ITipoVeiculo[] = []
 
-
-
-
   constructor(private veiculoService: VeiculoService) { }
   ngOnInit(): void { }
 
@@ -30,7 +27,6 @@ export class FormSelectComponent implements OnInit {
   @Output() codigoFipe = new EventEmitter();
   @Output() mesReferencia = new EventEmitter();
   @Output() isHabilite = new EventEmitter();
-
 
   obterMarcaVeiculo() {
     this.veiculoService.obterTipo(this.tipoVeiculo).subscribe(
@@ -62,20 +58,20 @@ export class FormSelectComponent implements OnInit {
       }
     )
   }
-  arr: [] = []
+
   obterVeiculo() {
     this.veiculoService.obterAno(this.tipoVeiculo, this.marcaVeiculo, this.modeloVeiculo, this.anoVeiculo).subscribe(
       (ret) => {
+
         this.valorReferencia.emit(ret.Valor);
         this.modelo.emit(ret.Modelo);
         this.marca.emit(ret.Marca);
         this.anoModelo.emit(ret.AnoModelo);
         this.codigoFipe.emit(ret.CodigoFipe);
         this.mesReferencia.emit(ret.MesReferencia);
-        this.isHabilite.emit(this.habilite=false)
-        console.log(this.habilite)
+        this.isHabilite.emit(this.habilite = false)
+
       }
     )
   }
-
 }

@@ -1,16 +1,19 @@
-.buscar{
+.buscar {
   display: flex;
   flex-direction: column;
-
+}
+@media screen and (max-width: 700px) {
+  .input {
+    border-radius: 0px 5px 5px 0px;
+  }
 }
 
-.input{
-  width: 425px;
+.input {
   background: #ffffff;
   height: 38px;
-	border: none;
-  padding-left: .2em;
-  /* border-radius: 0px 5px 5px 0px; */
+  border: none;
+  padding-left: 0.2em;
+
   font-size: 16px;
   font-weight: bold;
   color: #757575;
@@ -19,20 +22,19 @@
   color: #56d1e7;
   margin-bottom: 5px;
 }
-.input-icon{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-margin-bottom: 10px;
+.input-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
-input::placeholder{
-font-weight: bold;
-font-size: 16px;
-
+input::placeholder {
+  font-weight: bold;
+  font-size: 16px;
 }
-input:focus{
+input:focus {
   box-shadow: 0 0 0 0;
   outline: 0;
 }
@@ -45,6 +47,4 @@ input:focus{
   border-radius: 5px 0px 0px 5px;
   width: 30px;
   height: 38px;
-
 }
-

@@ -1,4 +1,6 @@
 .tg {
+  display: flex;
+  flex-wrap: wrap;
   border-collapse: collapse;
   border-spacing: 0;
   margin-top: 15px;
@@ -6,6 +8,10 @@
   font-size: 22px;
   font-weight: 500;
   border: solid #fff 2px;
+}
+.row{
+  display: flex;
+  gap: 5px;
 }
 .tg td {
   border-style: none;
@@ -55,10 +61,30 @@ color: #ff3333;
   font-size: 64px;
   font-weight: bold;
 }
+@media screen and (max-width: 700px) {
+  .calc-result {
+    font-size: 46px;
+  }
+  .footer{
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .calc-result {
+    font-size: 26px;
+  }
+  .footer{
+    font-size: 12px;
+  }
+}
 .footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   margin-top: 10px;
   border-radius: 5px;
-  font-size: 36px;
+  font-size: 32px;
   text-align: center;
 }
 .verde {

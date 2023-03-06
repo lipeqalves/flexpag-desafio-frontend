@@ -1,5 +1,4 @@
 import { Component, OnInit, Inject } from '@angular/core';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,7 +18,6 @@ export class AppComponent implements OnInit {
   valorVeiculo: string = "";
   percentual: number = 0
   percebtualAbs: string = ""
-  informacaoVeiculo: string = ""
   valorDeReferencia: string = ""
   modelo: string = ""
   marca: string = ""
@@ -28,40 +26,39 @@ export class AppComponent implements OnInit {
   mesReferencia: string = ""
   isHabilite: boolean = true;
 
-  IsHabilite(evente: boolean){
+  IsHabilite(evente: boolean) {
     this.isHabilite = evente
   }
-  MesReferencia(evente: string){
+  MesReferencia(evente: string) {
     this.mesReferencia = evente
   }
-  CodigoFipe(evente: string){
+  CodigoFipe(evente: string) {
     this.codigoFipe = evente
   }
-  AnoModelo(evente: string){
+  AnoModelo(evente: string) {
     this.anoModelo = evente
   }
-  Marca(evente: string){
+  Marca(evente: string) {
     this.marca = evente
   }
 
-  Modelo(evente: string){
+  Modelo(evente: string) {
     this.modelo = evente
   }
-  valorReferencia(evente: string){
+  valorReferencia(evente: string) {
     this.valorDeReferencia = evente
   }
 
   recebeValorDoVeiculo(evento: string) {
-    const transforma = this.valorDeReferencia.split(" ").splice(1,2).join("").replace(".", "")
+    const transforma = this.valorDeReferencia.split(" ").splice(1, 2).join("").replace(".", "")
 
-    this.valorVeiculo = parseFloat(evento).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+    this.valorVeiculo = parseFloat(evento).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
 
-    this.percentual = ((((parseFloat(evento)) - parseFloat(transforma)) / parseFloat(transforma))*100)
+    this.percentual = ((((parseFloat(evento)) - parseFloat(transforma)) / parseFloat(transforma)) * 100)
 
     this.percebtualAbs = (Math.abs(this.percentual)).toFixed(2)
 
   }
-
   constructor() {
 
   }

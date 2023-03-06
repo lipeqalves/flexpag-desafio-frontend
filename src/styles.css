@@ -14,3 +14,6 @@ body{
   justify-content: center;
   align-items: center;
 }
+li {
+  list-style-type: none;
+}

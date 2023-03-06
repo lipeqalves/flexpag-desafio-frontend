@@ -1,7 +1,7 @@
 button{
   font-weight: bold;
   height: 38px;
-  width: 100px;
+  padding: 10px;
 	border: none;
 	margin-bottom: 10px;
   border-radius: 0 5px 5px 0;
@@ -16,4 +16,16 @@ button{
 .desable{
   background: #757575;
   cursor: wait;
+}
+@media screen and (max-width: 700px) {
+  button {
+
+    border-radius:  5px;
+    flex-grow: 1;
+  }
+
+  .break {
+    flex-basis: 100%;
+    height: 0;
+  }
 }
