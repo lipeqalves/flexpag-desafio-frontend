@@ -1,4 +1,4 @@
-import { ITipoVeiculo, IVeiculo, VeiculoService } from './../veiculo.service';
+import { ITipoVeiculo, IVeiculo, VeiculoService } from '../../service/veiculo.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({

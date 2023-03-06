@@ -54,22 +54,28 @@ color: #ff3333;
 
 .calc-result {
   padding: 15px;
-  font-size: 64px;
+  font-size: 54px;
   font-weight: bold;
 }
 @media screen and (max-width: 700px) {
   .calc-result {
     font-size: 46px;
   }
+  .calc{
+    font-size: 14px;
+  }
   .footer{
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 @media screen and (max-width: 400px) {
   .calc-result {
-    font-size: 26px;
+    font-size: 22px;
   }
   .footer{
+    font-size: 12px;
+  }
+  .calc{
     font-size: 12px;
   }
 }
@@ -80,7 +86,7 @@ color: #ff3333;
   justify-content: center;
   margin-top: 10px;
   border-radius: 5px;
-  font-size: 32px;
+  font-size: 26px;
   text-align: center;
 }
 .verde {
