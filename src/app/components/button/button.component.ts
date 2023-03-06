@@ -21,8 +21,8 @@ export class ButtonComponent implements OnInit {
   adiciona() {
     this.itens.push('item')
   }
-Estilo():string{
- return this.isHabilite === true ? this.estilo = "desable":this.estilo= "enable"
-}
+  Estilo(): string {
+    return this.isHabilite === true ? this.estilo = "desable" : this.estilo = "enable"
+  }
 
 }

@@ -1,10 +1,9 @@
-
-
 <div class="buscar">
   <label for="text">Valor da venda</label>
   <span class="input-icon">
-   <span class="icon"><fa-icon  [icon]="faBrzilian"></fa-icon></span>
-    <input class="input "
+    <span class="icon"><fa-icon [icon]="faBrzilian"></fa-icon></span>
+    <input
+      class="input"
       [(ngModel)]="valor"
       (change)="envia()"
       type="text"

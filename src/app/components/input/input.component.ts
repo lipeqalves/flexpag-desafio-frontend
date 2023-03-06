@@ -17,7 +17,7 @@ export class InputComponent implements OnInit {
   @Input() valor: string = ""
   @Output() valorDoVeiculo = new EventEmitter();
 
-  envia(){
-     this.valorDoVeiculo.emit(this.valor);
+  envia() {
+    this.valorDoVeiculo.emit(this.valor);
   }
 }
