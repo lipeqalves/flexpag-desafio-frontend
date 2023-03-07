@@ -10,10 +10,11 @@ export class InputComponent implements OnInit {
 
   faBrzilian = faBrazilianRealSign;
 
-  ngOnInit(): void {
-
-  }
-
+  ngOnInit(): void {}
+/**
+ * @param valor valor do veiculo digitato pelo usuario para
+ *  fazer o calculo da variação percentual
+ */
   @Input() valor: string = ""
   @Output() valorDoVeiculo = new EventEmitter();
 

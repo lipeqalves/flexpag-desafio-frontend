@@ -11,14 +11,14 @@ export class AppComponent implements OnInit {
 
   }
 
-  isAliveCard: boolean = false;
+  isHideShowCard: boolean = false;
   isMediaFipe: boolean = false;
   isAbaixoFipe: boolean = false;
   isAcimaFipe: boolean = false;
   valorVeiculo: string = "";
   percentual: number = 0
   percebtualAbs: string = ""
-  valorDeReferencia: string = ""
+  valorFipe: string = ""
   modelo: string = ""
   marca: string = ""
   anoModelo: string = ""
@@ -26,9 +26,23 @@ export class AppComponent implements OnInit {
   mesReferencia: string = ""
   isHabilite: boolean = true;
 
+  /**
+   * habilita o botão de busca depois que as informações são obtidas pela api
+   * @param isHabilite
+   *
+   */
   IsHabilite(evente: boolean) {
     this.isHabilite = evente
   }
+  /**
+   * informaçãos do veiculo retornadas pela api
+   * @param mesReferencia
+   * @param codigoFipe
+   * @param anoModelo
+   * @param marca
+   * @param modelo
+   * @param valorFipe
+   */
   MesReferencia(evente: string) {
     this.mesReferencia = evente
   }
@@ -45,12 +59,21 @@ export class AppComponent implements OnInit {
   Modelo(evente: string) {
     this.modelo = evente
   }
-  valorReferencia(evente: string) {
-    this.valorDeReferencia = evente
+  ValorFipe(evente: string) {
+    this.valorFipe = evente
   }
-
+/**
+ * transforma o valorFipe que esta no padrão : R$000.000,00 para um numero calculavel
+ * @param transforma
+ * valor do veiculo digitado no campo de busca pelo usuário, e trasformado para um numero calculavel
+ * @param valorVeiculo
+ * variação de aumento do percentual
+ * @param percentual
+ * valor absoluto da variação de aumento do percentual
+ * @param percentualAbs
+ */
   recebeValorDoVeiculo(evento: string) {
-    const transforma = this.valorDeReferencia.split(" ").splice(1, 2).join("").replace(".", "")
+    const transforma = this.valorFipe.split(" ").splice(1, 2).join("").replace(".", "")
 
     this.valorVeiculo = parseFloat(evento).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
 
@@ -59,12 +82,18 @@ export class AppComponent implements OnInit {
     this.percebtualAbs = (Math.abs(this.percentual)).toFixed(2)
 
   }
-  constructor() {
-
-  }
-
+  /**
+   * logica usada para esconder o card de informações
+   * @param isHideShowCard
+   * logica que verifica se o valor do veiculo pesquisado pelo usuario esta abixo
+   * acima ou na media da tabea fipe de acordo com a variação percentual calculada
+   * @param isAcimaFipe
+   * @param isAbaixoFipe
+   * @param isMediaFipe
+   *
+   */
   hideComponet() {
-    this.isAliveCard === false ? this.isAliveCard = true : null;
+    this.isHideShowCard === false ? this.isHideShowCard = true : null;
     if (this.percentual >= 10) {
       this.isAcimaFipe = true
       this.isAbaixoFipe = false

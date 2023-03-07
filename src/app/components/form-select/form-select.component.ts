@@ -1,5 +1,6 @@
-import { ITipoVeiculo, VeiculoService } from '../../service/veiculo.service';
+import { VeiculoService } from '../../service/veiculo.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ITipoVeiculo } from 'src/app/types/interface.tipo-veiculo';
 
 @Component({
   selector: 'app-form-select',
@@ -20,14 +21,21 @@ export class FormSelectComponent implements OnInit {
   constructor(private veiculoService: VeiculoService) { }
   ngOnInit(): void { }
 
+  //disponobiliza as informações vindo da api para o arquivo pincipal
   @Output() modelo = new EventEmitter();
-  @Output() valorReferencia = new EventEmitter();
+  @Output() valorFipe = new EventEmitter();
   @Output() marca = new EventEmitter();
   @Output() anoModelo = new EventEmitter();
   @Output() codigoFipe = new EventEmitter();
   @Output() mesReferencia = new EventEmitter();
   @Output() isHabilite = new EventEmitter();
 
+
+  /**
+   * função que obtem o retorno da api edisponibiliza para fazer a
+   * busca da proxima informação no campo de busca na pagina principal
+   * marca -> modelo-> ano-> toda informação do veiculo
+   */
   obterMarcaVeiculo() {
     this.veiculoService.obterTipo(this.tipoVeiculo).subscribe(
       (ret) => { this.marcas = ret })
@@ -58,12 +66,15 @@ export class FormSelectComponent implements OnInit {
       }
     )
   }
+  /**
+   * retorna as informações completa do veiculo e envia para a pagina principal
+   */
 
   obterVeiculo() {
     this.veiculoService.obterAno(this.tipoVeiculo, this.marcaVeiculo, this.modeloVeiculo, this.anoVeiculo).subscribe(
       (ret) => {
 
-        this.valorReferencia.emit(ret.Valor);
+        this.valorFipe.emit(ret.Valor);
         this.modelo.emit(ret.Modelo);
         this.marca.emit(ret.Marca);
         this.anoModelo.emit(ret.AnoModelo);

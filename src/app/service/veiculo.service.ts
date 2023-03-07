@@ -1,22 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
-
-export interface ITipoVeiculo {
-  nome: string,
-  codigo: string
-}
-
-export interface IVeiculo {
-AnoModelo: number,
-CodigoFipe: string,
-Marca: string,
-MesReferencia: string,
-Modelo: string,
-SiglaCombustivel: string
-TipoVeiculo: number,
-Valor: string
-}
+import { IVeiculo } from '../types/interface.veiculo';
+import { ITipoVeiculo } from '../types/interface.tipo-veiculo';
 
 @Injectable({
   providedIn: 'root'
@@ -24,24 +10,53 @@ Valor: string
 
 export class VeiculoService {
   API_PATH = "https://parallelum.com.br/fipe/api/v1/";
-  //https://parallelum.com.br/fipe/api/v1/{tipo do veículo}/marcas ok
-  //https://parallelum.com.br/fipe/api/v1/{tipo do veículo}/marcas/{codigo da marca}/modelos/modelos ok
-  //https://parallelum.com.br/fipe/api/v1/{tipo do veículo}/marcas/{código da marca}/modelos/{codigo do modelo}/anos
-  //https://parallelum.com.br/fipe/api/v1/{tipo do veículo}/marcas/{código da marca}/modelos/{codigo do modelo}/anos/{codigo do ano}
+/**
+ *base url da api
+ * @param http
+ *
+ * funções usadas para buscar as informações do veiculo na api
+ */
+
   constructor(private http: HttpClient) { }
+  /**
+   *
+   * @param tipo carro, caminhao ou moto
+   * @returns informação da marca do veiculo
+   */
   obterTipo(tipo: string): Observable<ITipoVeiculo[]> {
     return this.http.get<ITipoVeiculo[]>(`${this.API_PATH}${tipo}/marcas`)
   }
+  /**
+   *
+   * @param tipo
+   * @param marca codigo da marca
+   * @returns informação do modelo do veiculo
+   */
   obterMarca(tipo: string, marca: string): Observable<ITipoVeiculo[]> {
     return this.http.get<ITipoVeiculo[]>(`${this.API_PATH}${tipo}/marcas/${marca}/modelos`)
   }
-
+/**
+ *
+ * @param tipo
+ * @param marca
+ * @param modelo codigo do modelo
+ * @returns informmação do ano do veiculo
+ */
   obterModelo(tipo: string, marca: string, modelo: string): Observable<ITipoVeiculo[]> {
     return this.http.get<ITipoVeiculo[]>(`${this.API_PATH}${tipo}/marcas/${marca}/modelos/${modelo}/anos`)
   }
-
+/**
+ *
+ * @param tipo
+ * @param marca
+ * @param modelo
+ * @param anos codigo do ano
+ * @returns informação completa do veiculo
+ */
   obterAno(tipo: string, marca: string, modelo: string, anos: string): Observable<IVeiculo> {
     return this.http.get<IVeiculo>(`${this.API_PATH}${tipo}/marcas/${marca}/modelos/${modelo}/anos/${anos}`)
   }
 
 }
+
+
