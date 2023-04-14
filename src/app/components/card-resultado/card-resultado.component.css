@@ -3,9 +3,9 @@
   flex-wrap: wrap;
   border-collapse: collapse;
   margin-top: 15px;
-  color: #0299c3;
+  color: #fff;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: bold;
   border: solid #fff 2px;
 }
 
@@ -17,6 +17,7 @@
   overflow: hidden;
   padding: 10px 5px;
   word-break: normal;
+  text-transform: uppercase;
 }
 
 .tg .tg-dvpl {

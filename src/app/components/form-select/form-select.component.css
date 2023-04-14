@@ -19,12 +19,13 @@
 }
 
 .form__select > label {
-  color: #56d1e7;
+  color: #ffffff;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 .select {
-  color: #56d1e7;
-  background: #ffffff;
+  color: #757575;
+  background-color: #ffffff;
 
   padding: 3px;
   flex-grow: 1;

@@ -19,8 +19,9 @@
   color: #757575;
 }
 .buscar > label {
-  color: #56d1e7;
+  color: #ffffff;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 .input-icon {
   display: flex;
