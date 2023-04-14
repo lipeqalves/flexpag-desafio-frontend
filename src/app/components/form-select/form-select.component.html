@@ -8,14 +8,14 @@
       class="select"
       id="tipo"
     >
-      <option value="">--none--</option>
+      <option value="">Escolha o veiculo</option>
       <option value="carros">Carro</option>
       <option value="motos">Moto</option>
       <option value="caminhoes">Caminhão</option>
     </select>
   </div>
   <div class="form__select">
-    <label for="marca">Marca</label>
+    <label for="marca"> Marca</label>
     <select
       name="select"
       class="select"
@@ -23,7 +23,7 @@
       [(ngModel)]="marcaVeiculo"
       (change)="obterModeloVeiculo()"
     >
-      <option value="">--none--</option>
+      <option value="">Escolha a Marca</option>
       <option value="{{ marca.codigo }}" *ngFor="let marca of marcas">
         {{ marca.nome }}
       </option>
@@ -39,7 +39,7 @@
       [(ngModel)]="modeloVeiculo"
       (change)="obterAnoVeiculo()"
     >
-      <option value="">--none--</option>
+      <option value="">Escolha o Modelo</option>
       <option value="{{ modelo.codigo }}" *ngFor="let modelo of modelos.flat()">
         {{ modelo.nome }}
       </option>
@@ -55,7 +55,7 @@
       [(ngModel)]="anoVeiculo"
       (change)="obterVeiculo()"
     >
-      <option value="" selected>--none--</option>
+      <option value="" selected>Escolha o Ano</option>
       <option value="{{ ano.codigo }}" *ngFor="let ano of anos">
         {{ ano.nome }}
       </option>
