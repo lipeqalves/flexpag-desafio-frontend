@@ -9,7 +9,7 @@ export class CardResultadoComponent {
 /**
  * informções do veiculo pronta para mostrar na tela
  */
-  @Input() valorVeiculo: string | undefined;
+  @Input() valorVeiculo!: string;
   @Input() percentual: string = "";
   @Input() valorFipe: string = "";
   @Input() modelo: string = "";
@@ -18,8 +18,8 @@ export class CardResultadoComponent {
   @Input() mesReferencia: string = "";
   @Input() codigoFipe: string = "";
 
-  @Input() isMediaFipe: boolean | undefined;
-  @Input() isAcimaFipe: boolean | undefined;
-  @Input() isAbaixoFipe: boolean | undefined;
+  @Input() isMediaFipe!: boolean;
+  @Input() isAcimaFipe!: boolean;
+  @Input() isAbaixoFipe!: boolean;
 
 }
