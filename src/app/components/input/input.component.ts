@@ -15,7 +15,7 @@ export class InputComponent implements OnInit {
  * @param valor valor do veiculo digitato pelo usuario para
  *  fazer o calculo da variação percentual
  */
-  @Input() valor: string = ""
+  @Input() valor: string = "";
   @Output() valorDoVeiculo = new EventEmitter();
 
   envia() {

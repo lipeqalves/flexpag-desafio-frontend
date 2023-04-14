@@ -1,6 +1,6 @@
 import { VeiculoService } from '../../service/veiculo.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ITipoVeiculo } from 'src/app/types/interface.tipo-veiculo';
+import { ITipoVeiculo } from 'src/app/model/interface.tipo-veiculo';
 
 @Component({
   selector: 'app-form-select',
@@ -9,14 +9,14 @@ import { ITipoVeiculo } from 'src/app/types/interface.tipo-veiculo';
 })
 
 export class FormSelectComponent implements OnInit {
-  tipoVeiculo: string = ""
-  marcaVeiculo: string = ""
-  modeloVeiculo: string = ""
-  anoVeiculo: string = ""
-  habilite: boolean = false
+  tipoVeiculo: string = "";
+  marcaVeiculo: string = "";
+  modeloVeiculo: string = "";
+  anoVeiculo: string = "";
+  habilite: boolean = false;
   marcas: ITipoVeiculo[] = [];
   modelos: ITipoVeiculo[] = [];
-  anos: ITipoVeiculo[] = []
+  anos: ITipoVeiculo[] = [];
 
   constructor(private veiculoService: VeiculoService) { }
   ngOnInit(): void { }
@@ -38,7 +38,7 @@ export class FormSelectComponent implements OnInit {
    */
   obterMarcaVeiculo() {
     this.veiculoService.obterTipo(this.tipoVeiculo).subscribe(
-      (ret) => { this.marcas = ret })
+      (data) => { this.marcas = data });
   }
 
   obterModeloVeiculo() {
@@ -64,7 +64,7 @@ export class FormSelectComponent implements OnInit {
           }
         );
       }
-    )
+    );
   }
   /**
    * retorna as informações completa do veiculo e envia para a pagina principal
@@ -72,17 +72,17 @@ export class FormSelectComponent implements OnInit {
 
   obterVeiculo() {
     this.veiculoService.obterAno(this.tipoVeiculo, this.marcaVeiculo, this.modeloVeiculo, this.anoVeiculo).subscribe(
-      (ret) => {
+      (data) => {
 
-        this.valorFipe.emit(ret.Valor);
-        this.modelo.emit(ret.Modelo);
-        this.marca.emit(ret.Marca);
-        this.anoModelo.emit(ret.AnoModelo);
-        this.codigoFipe.emit(ret.CodigoFipe);
-        this.mesReferencia.emit(ret.MesReferencia);
-        this.isHabilite.emit(this.habilite = false)
+        this.valorFipe.emit(data.Valor);
+        this.modelo.emit(data.Modelo);
+        this.marca.emit(data.Marca);
+        this.anoModelo.emit(data.AnoModelo);
+        this.codigoFipe.emit(data.CodigoFipe);
+        this.mesReferencia.emit(data.MesReferencia);
+        this.isHabilite.emit(this.habilite = false);
 
       }
-    )
+    );
   }
 }
