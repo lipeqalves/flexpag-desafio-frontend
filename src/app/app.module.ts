@@ -9,7 +9,6 @@ import { FormSelectComponent } from './components/form-select/form-select.compon
 import { InputComponent } from './components/input/input.component';
 import { ButtonComponent } from './components/button/button.component';
 import { CardResultadoComponent } from './components/card-resultado/card-resultado.component';
-import { TitleComponent } from './components/title/title.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
@@ -21,7 +20,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     InputComponent,
     ButtonComponent,
     CardResultadoComponent,
-    TitleComponent
+
   ],
   imports: [
     BrowserModule,
