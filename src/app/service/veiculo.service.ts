@@ -10,12 +10,6 @@ import { ITipoVeiculo } from '../model/interface.tipo-veiculo';
 
 export class VeiculoService {
   API_PATH = "https://parallelum.com.br/fipe/api/v1/";
-/**
- *base url da api
- * @param http
- *
- * funções usadas para buscar as informações do veiculo na api
- */
 
   constructor(private http: HttpClient) { }
   /**
@@ -24,7 +18,7 @@ export class VeiculoService {
    * @returns informação da marca do veiculo
    */
   obterTipo(tipo: string): Observable<ITipoVeiculo[]> {
-    return this.http.get<ITipoVeiculo[]>(`${this.API_PATH}${tipo}/marcas`)
+    return this.http.get<ITipoVeiculo[]>(`${this.API_PATH}${tipo}/marcas`);
   }
   /**
    *
@@ -33,30 +27,28 @@ export class VeiculoService {
    * @returns informação do modelo do veiculo
    */
   obterMarca(tipo: string, marca: string): Observable<ITipoVeiculo[]> {
-    return this.http.get<ITipoVeiculo[]>(`${this.API_PATH}${tipo}/marcas/${marca}/modelos`)
+    return this.http.get<ITipoVeiculo[]>(`${this.API_PATH}${tipo}/marcas/${marca}/modelos`);
   }
-/**
- *
- * @param tipo
- * @param marca
- * @param modelo codigo do modelo
- * @returns informmação do ano do veiculo
- */
+  /**
+   *
+   * @param tipo
+   * @param marca
+   * @param modelo codigo do modelo
+   * @returns informmação do ano do veiculo
+   */
   obterModelo(tipo: string, marca: string, modelo: string): Observable<ITipoVeiculo[]> {
-    return this.http.get<ITipoVeiculo[]>(`${this.API_PATH}${tipo}/marcas/${marca}/modelos/${modelo}/anos`)
+    return this.http.get<ITipoVeiculo[]>(`${this.API_PATH}${tipo}/marcas/${marca}/modelos/${modelo}/anos`);
   }
-/**
- *
- * @param tipo
- * @param marca
- * @param modelo
- * @param anos codigo do ano
- * @returns informação completa do veiculo
- */
+  /**
+   *
+   * @param tipo
+   * @param marca
+   * @param modelo
+   * @param anos codigo do ano
+   * @returns informação completa do veiculo
+   */
   obterAno(tipo: string, marca: string, modelo: string, anos: string): Observable<IVeiculo> {
-    return this.http.get<IVeiculo>(`${this.API_PATH}${tipo}/marcas/${marca}/modelos/${modelo}/anos/${anos}`)
+    return this.http.get<IVeiculo>(`${this.API_PATH}${tipo}/marcas/${marca}/modelos/${modelo}/anos/${anos}`);
   }
 
 }
-
-

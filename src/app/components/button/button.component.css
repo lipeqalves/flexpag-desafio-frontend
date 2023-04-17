@@ -1,26 +1,26 @@
-button{
+button {
   font-weight: bold;
   height: 38px;
   padding: 10px;
-	border: none;
-	margin-bottom: 10px;
+  border: none;
+  margin-bottom: 10px;
   border-radius: 0 5px 5px 0;
   color: #ffffff;
 }
 
-.enable{
+.enable {
   background: #f497b0;
   cursor: pointer;
 }
 
-.desable{
+.desable {
   background: #757575;
   cursor: wait;
 }
 @media screen and (max-width: 700px) {
   button {
-
-    border-radius:  5px;
+    width: 280px;
+    border-radius: 5px;
     flex-grow: 1;
   }
 

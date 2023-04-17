@@ -7,18 +7,18 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
-estilo: string = "desable"
+estilo: string = "desable";
 
   ngOnInit(): void {}
 
-  @Input() isHabilite: boolean = true
+  @Input() isHabilite: boolean = true;
 
   /**
    *
    * @returns habilita o botão apos receber as informação do veiculo da api e faz alteração na estilização do mesmo
    */
   Estilo(): string {
-    return this.isHabilite === true ? this.estilo = "desable" : this.estilo = "enable"
+    return this.isHabilite === true ? this.estilo = "desable" : this.estilo = "enable";
   }
 
 }

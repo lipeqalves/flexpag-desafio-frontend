@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
    *
    */
   IsHabilite(evente: boolean) {
-    this.isHabilite = evente
+    this.isHabilite = evente;
   }
   /**
    * informaçãos do veiculo retornadas pela api
@@ -44,42 +44,42 @@ export class AppComponent implements OnInit {
    * @param valorFipe
    */
   MesReferencia(evente: string) {
-    this.mesReferencia = evente
+    this.mesReferencia = evente;
   }
   CodigoFipe(evente: string) {
-    this.codigoFipe = evente
+    this.codigoFipe = evente;
   }
   AnoModelo(evente: string) {
-    this.anoModelo = evente
+    this.anoModelo = evente;
   }
   Marca(evente: string) {
-    this.marca = evente
+    this.marca = evente;
   }
 
   Modelo(evente: string) {
-    this.modelo = evente
+    this.modelo = evente;
   }
   ValorFipe(evente: string) {
-    this.valorFipe = evente
+    this.valorFipe = evente;
   }
-/**
- * transforma o valorFipe que esta no padrão : R$000.000,00 para um numero calculavel
- * @param transforma
- * valor do veiculo digitado no campo de busca pelo usuário, e trasformado para um numero calculavel
- * @param valorVeiculo
- * variação de aumento do percentual
- * @param percentual
- * valor absoluto da variação de aumento do percentual
- * @param percentualAbs
- */
+  /**
+   * transforma o valorFipe que esta no padrão : R$000.000,00 para um numero calculavel
+   * @param transforma
+   * valor do veiculo digitado no campo de busca pelo usuário, e trasformado para um numero calculavel
+   * @param valorVeiculo
+   * variação de aumento do percentual
+   * @param percentual
+   * valor absoluto da variação de aumento do percentual
+   * @param percentualAbs
+   */
   recebeValorDoVeiculo(evento: string) {
-    const transforma = this.valorFipe.split(" ").splice(1, 2).join("").replace(".", "")
+    const transforma = this.valorFipe.split(" ").splice(1, 2).join("").replace(".", "");
 
-    this.valorVeiculo = parseFloat(evento).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+    this.valorVeiculo = parseFloat(evento).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
 
-    this.percentual = ((((parseFloat(evento)) - parseFloat(transforma)) / parseFloat(transforma)) * 100)
+    this.percentual = ((((parseFloat(evento)) - parseFloat(transforma)) / parseFloat(transforma)) * 100);
 
-    this.percebtualAbs = (Math.abs(this.percentual)).toFixed(2)
+    this.percebtualAbs = (Math.abs(this.percentual)).toFixed(2);
 
   }
   /**
@@ -95,17 +95,17 @@ export class AppComponent implements OnInit {
   hideComponet() {
     this.isHideShowCard === false ? this.isHideShowCard = true : null;
     if (this.percentual >= 10) {
-      this.isAcimaFipe = true
-      this.isAbaixoFipe = false
-      this.isMediaFipe = false
+      this.isAcimaFipe = true;
+      this.isAbaixoFipe = false;
+      this.isMediaFipe = false;
     } else if (this.percentual <= -10) {
-      this.isAcimaFipe = false
-      this.isAbaixoFipe = true
-      this.isMediaFipe = false
+      this.isAcimaFipe = false;
+      this.isAbaixoFipe = true;
+      this.isMediaFipe = false;
     } else if (this.percentual >= -9.99 && this.percentual <= 9.99) {
-      this.isAcimaFipe = false
-      this.isAbaixoFipe = false
-      this.isMediaFipe = true
+      this.isAcimaFipe = false;
+      this.isAbaixoFipe = false;
+      this.isMediaFipe = true;
     }
 
   }

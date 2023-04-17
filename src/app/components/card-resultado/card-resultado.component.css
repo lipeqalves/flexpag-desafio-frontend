@@ -1,5 +1,7 @@
 .tg {
+  width: 856px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   border-collapse: collapse;
   margin-top: 15px;
@@ -19,7 +21,16 @@
   word-break: normal;
   text-transform: uppercase;
 }
-
+@media screen and (max-width: 600px) {
+  .tg{
+   width: 345px;
+   border: none;
+  }
+  .tg td {
+   padding: 0;
+   text-transform: capitalize;
+  }
+ }
 .tg .tg-dvpl {
   border-color: inherit;
   text-align: left;
@@ -79,6 +90,7 @@
   .calc {
     font-size: 12px;
   }
+
 }
 .footer {
   display: flex;
