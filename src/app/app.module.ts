@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms'
 
-
-import { AppRoutingModule } from './pages/home/app-routing.module';
-import { AppComponent } from './pages/home/app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { FormSelectComponent } from './components/form-select/form-select.component';
 import { InputComponent } from './components/input/input.component';
 import { ButtonComponent } from './components/button/button.component';
@@ -12,6 +11,7 @@ import { CardResultadoComponent } from './components/card-resultado/card-resulta
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     InputComponent,
     ButtonComponent,
     CardResultadoComponent,
-
+    HomeComponent
   ],
   imports: [
     BrowserModule,
